@@ -100,6 +100,22 @@ data_score = "xx%"
 data_assessment = "Your data is terrible, it is not reliable"
 st.markdown(f"<p style='color:orange'>Data assessment: {data_assessment}</p>", unsafe_allow_html=True)
 
+
+# Create four empty containers
+container1, container2, container3, container4 = st.columns(4)
+
+# Define text outputs
+text1 = "Text 1"
+text2 = "Text 2"
+text3 = "Text 3"
+text4 = "Text 4"
+
+# Write text to each container
+container1.write(text1)
+container2.write(text2)
+container3.write(text3)
+container4.write(text4)
+
 st.markdown("""
 This is a proof of concept platform built using Google tools in the NHS AI Google Hackathon, May 2024. 
 

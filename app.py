@@ -12,13 +12,26 @@ st.markdown("""
 Welcome to WISE, your personal analytical assistant!
 """)
 
+st.markdown("""
+Welcome to WISE, your personal analytical assistant! Please drag and drop a health dataset of your choice in a supported format (e.g., CSV, XLSX).
+
+**Please Note:**
+
+* To ensure optimal performance, please limit the size of your dataset.
+* For best results, ensure your dataset is well-structured and contains relevant health data.
+
+We're here to help you discover insights from your data. Feel free to ask questions or explore visualizations!
+""")
+
+context = st.text_input("Can you please describe your role in a sentence")
+
 # Section for choosing data source
 st.subheader("Choose Data Source:")
 
 # Option 1: Local File Upload
 col1, col2 = st.columns(2)
 with col1:
-  use_local_file = st.checkbox("Use Local File (dummyCSV)", value=False)
+  use_local_file = st.checkbox("Use Local File", value=False)
   if use_local_file:
     try:
       df = pd.read_csv("dummyCSV.csv")
@@ -29,7 +42,6 @@ with col1:
 
 # Option 2: Drag and Drop
 with col2:
-  st.subheader("OR")
   uploaded_file = st.file_uploader("Upload your health dataset:", type=['csv', 'xlsx'], key="uploaded_file")
 
   if uploaded_file is not None:

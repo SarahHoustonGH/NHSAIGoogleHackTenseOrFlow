@@ -71,14 +71,14 @@ problem = st.text_input("What question would you want to answer with this data?"
 # Function to generate prompt feedback (replace with actual API call logic)
 def get_better_prompt(original_prompt):
     # Placeholder logic for API call
-    better_prompt = "This is a suggested improvement based on your prompt."
+    better_prompt = "...a suggested improvement based on your prompt"
     return better_prompt
 
 # Generate prompt feedback based on user input (assuming API call)
 if problem:
     better_prompt = get_better_prompt(problem)
     prompt_assessment = f"Your prompt could be improved. How about {better_prompt}?"
-    st.markdown(f"<p style='color:orange'>{prompt_assessment}</p>", unsafe_allow_html=True)
+    st.markdown(f"{prompt_assessment}", unsafe_allow_html=True)
 
 # Submit button with conditional enabling
 submit = st.button('Generate data analysis', disabled=not (uploaded_file and problem))

@@ -19,7 +19,7 @@ Welcome to WISE, your personal analytical assistant!
 We're here to help you discover insights from your data. Feel free to ask questions or explore visualizations.
 """)
 
-st.subtitle("Tell us about yourself")
+st.subheader("Tell us about yourself")
 context = st.text_input("Describe your role in a sentence. This will help the model choose the best way to respond to your query.")
 
 # Create four empty containers

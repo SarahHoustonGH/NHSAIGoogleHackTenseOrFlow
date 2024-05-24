@@ -10,17 +10,13 @@ st.title("WISE: Wellbeing Insights Streamlined and Explained :owl:")
 # Welcome message
 st.markdown("""
 Welcome to WISE, your personal analytical assistant!
-""")
-
-st.markdown("""
-Welcome to WISE, your personal analytical assistant! Please drag and drop a health dataset of your choice in a supported format (e.g., CSV, XLSX).
 
 **Please Note:**
 
 * To ensure optimal performance, please limit the size of your dataset.
 * For best results, ensure your dataset is well-structured and contains relevant health data.
 
-We're here to help you discover insights from your data. Feel free to ask questions or explore visualizations!
+We're here to help you discover insights from your data. Feel free to ask questions or explore visualizations.
 """)
 
 context = st.text_input("Can you please describe your role in a sentence")
@@ -103,3 +99,9 @@ data_score = "xx%"
 
 data_assessment = "Your data is terrible, it is not reliable"
 st.markdown(f"<p style='color:orange'>Data assessment: {data_assessment}</p>", unsafe_allow_html=True)
+
+st.markdown("""
+This is a proof of concept platform built using Google tools in the NHS AI Google Hackathon, May 2024. 
+
+For feedback or more information, please contact us at chris.m.lewis@gmail.com
+""")

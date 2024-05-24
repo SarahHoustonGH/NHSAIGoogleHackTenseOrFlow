@@ -25,6 +25,8 @@ context = st.text_input("Describe your role in a sentence. This will help the mo
 # Create four empty containers
 example_container1, example_container2, example_container3 = st.columns(3)
 
+st.markdown("Find some useful examples below")
+
 # Define text outputs
 example_1 = "I am a respiratory physician, interested in developing a new tool to analyse waveforms"
 example_2 = "I am a GP, interested in learning more about my patients with cancer"
@@ -36,7 +38,7 @@ example_container2.write(example_2)
 example_container3.write(example_3)
 
 # Section for choosing data source
-st.markdown("Choose Data Source:")
+st.subheader("Choose a Data Source")
 
 # Option 1: Local File Upload
 col1, col2 = st.columns(2)
@@ -80,6 +82,7 @@ with col2:
 
 
 # Text input for problem with placeholder
+st.subheader("Tell us your problem")
 problem = st.text_input("What question would you want to answer with this data?", key="problem")
 
 # Function to generate prompt feedback (replace with actual API call logic)
@@ -91,8 +94,11 @@ def get_better_prompt(original_prompt):
 # Generate prompt feedback based on user input (assuming API call)
 if problem:
     better_prompt = get_better_prompt(problem)
-    prompt_assessment = f"Your prompt could be improved. How about {better_prompt}?"
-    st.markdown(f"{prompt_assessment}", unsafe_allow_html=True)
+    prompt_assessment = f"Your prompt could be improved. How about {better_prompt}?."
+    st.markdown("To learn more about designing better prompts, learn more [here](%s)" % "https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/introduction-prompt-design")
+    st.markdown(f"{prompt_assessment}", unsafe_allow_html=True
+                
+                problem = st.text_input("Would you like to refine your prompt?")
 
 # Submit button with conditional enabling
 submit = st.button('Generate data analysis', disabled=not (uploaded_file and problem))

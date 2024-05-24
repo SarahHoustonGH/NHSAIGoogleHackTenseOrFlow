@@ -24,6 +24,9 @@ context = st.text_input("Describe your role in a sentence. This will help the mo
 
 st.markdown("Find some useful examples below")
 
+# Create four empty containers
+example_container1, example_container2, example_container3 = st.columns(3)
+
 # Define text outputs
 example_1 = "I am a respiratory physician, interested in developing a new tool to analyse waveforms"
 example_2 = "I am a GP, interested in learning more about my patients with cancer"
@@ -34,8 +37,7 @@ example_container1.write(example_1)
 example_container2.write(example_2)
 example_container3.write(example_3)
 
-# Create four empty containers
-example_container1, example_container2, example_container3 = st.columns(3)
+
 
 # Section for choosing data source
 st.subheader("Choose a Data Source")

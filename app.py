@@ -118,9 +118,13 @@ if submit:
 # Create two empty containers for analysis
 data1, data2 = st.columns(2)
 
+text_result = "This is the text result"
+graph_result = "This is the graphical result"
+
 # Write text to each container
-data1.write(data_assessment)
-data2.write(data_citation)
+data1.write(text_result)
+data2.write(graph_result)
+
 
 
 st.subheader("We've checked the data and result for you. This is what we found")

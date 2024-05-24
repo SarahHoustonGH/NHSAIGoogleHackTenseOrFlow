@@ -19,7 +19,8 @@ Welcome to WISE, your personal analytical assistant!
 We're here to help you discover insights from your data. Feel free to ask questions or explore visualizations.
 """)
 
-context = st.text_input("Can you please describe your role in a sentence")
+st.markdown("Describe your role in a sentence:")
+context = st.text_input()
 
 # Section for choosing data source
 st.markdown("Choose Data Source:")

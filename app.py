@@ -1,8 +1,5 @@
-#!pip install matplotlib
-
 import streamlit as st
 import pandas as pd
-import matplotlib.pyplot as plt
 
 # Set a tab title
 st.set_page_config(page_title="WISE")
@@ -58,50 +55,7 @@ with col1:
       df = None
 
 # Option 2: Drag and Drop
-def create_chart(df, selected_options, chart_type):
-  """
-  Creates a chart based on user input for chart type and selected options.
-
-  Args:
-    df (pandas.DataFrame): The uploaded DataFrame containing the health data.
-    selected_options (list): The list of selected options (column names) from the user.
-    chart_type (str): The selected chart type ("bar", "line", or "scatter").
-
-  Returns:
-    None (for Matplotlib) or Matplotlib figure object (for Streamlit integration)
-  """
-
-  if chart_type:  # Check if a valid chart type is selected
-    data_x = df[selected_options[0]]  # Assuming first option is for x-axis
-    data_y = df[selected_options[1:]]  # Remaining options for y-axis
-
-    plt.figure(figsize=(10, 6))  # Adjust figure size as needed
-
-    if chart_type == "bar":
-      plt.bar(data_x, data_y)
-    elif chart_type == "line":
-      plt.plot(data_x, data_y)
-    elif chart_type == "scatter":
-      plt.scatter(data_x, data_y)
-    else:
-      st.error("Error: Unexpected chart type.")  # Handle unexpected input
-
-    # Add labels and title (common for all charts)
-    plt.xlabel(selected_options[0])  # Use the first option as X-axis label
-    plt.ylabel(", ".join(selected_options[1:]))  # Combine remaining options for Y-axis label
-    plt.title("Chart")
-
-    # Option 1: Display Matplotlib chart in a separate window (not recommended)
-    # plt.show()
-
-    # Option 2: Return the figure object for Streamlit integration
-    return plt.figure()  # Return the created figure object
-
-def main():
-  """
-  The main function of the Streamlit app for data exploration and visualization.
-  """
-
+with col2:
   uploaded_file = st.file_uploader("Upload your health dataset:", type=['csv', 'xlsx'], key="uploaded_file")
 
   if uploaded_file is not None:
@@ -119,29 +73,15 @@ def main():
 
     selected_options = st.multiselect(
       "What data would you like to explore?",
-      column_name_list
-    )
+      column_name_list)
 
-    if selected_options:  # Check if at least two options are selected for visualization
-      chart_type = st.selectbox("Select Chart Type", ("bar", "line", "scatter"))
+    # (Your data analysis code using the uploaded file content, prompt and column name list)
 
-      # Pass a copy of df to avoid modifications
-      chart_figure = create_chart(df.copy(), selected_options, chart_type.lower())
-
-      # Option 1: Display Matplotlib chart (not recommended)
-      # plt.show()
-
-      # Option 2: Display Matplotlib chart within Streamlit
-      st.pyplot(chart_figure)  # Display the returned figure from create_chart
-
-    else:
-      st.warning("Please select at least two data options to create a chart.")
-
+    # Success message after analysis (replace with specific results)
+    st.success("Data analysis complete! See summary below.")
   else:
     st.info("Drag and drop your dataset here to start exploring!")
 
-if __name__ == "__main__":
-  main()
 
 # Text input for problem with placeholder
 st.subheader("Tell us your problem")

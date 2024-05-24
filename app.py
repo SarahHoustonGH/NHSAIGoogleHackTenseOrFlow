@@ -13,7 +13,6 @@ Welcome to WISE, your personal analytical assistant!
 
 **Please Note:**
 
-* To ensure optimal performance, please limit the size of your dataset.
 * For best results, ensure your dataset is well-structured and contains relevant health data.
 
 We're here to help you discover insights from your data. Feel free to ask questions or explore visualizations.
@@ -85,7 +84,14 @@ with col2:
 
 # Text input for problem with placeholder
 st.subheader("Tell us your problem")
+st.markdown("""For example:
+“Give me mean unadjusted scores by cancer alliance”
+“Which area is most in need of performance improvement?” 
+""")
+
 problem = st.text_input("What question would you want to answer with this data?", key="problem")
+
+
 
 # Function to generate prompt feedback (replace with actual API call logic)
 def get_better_prompt(original_prompt):

@@ -30,8 +30,8 @@ with col1:
   use_local_file = st.checkbox("Use Local File", value=False)
   if use_local_file:
     try:
-      df = pd.read_csv("/DummyCSV.csv")
-      st.success("Loaded data from ddummy file")
+      df = pd.read_csv("\DummyCSV.csv")
+      st.success("Loaded data from dummy file")
     except FileNotFoundError:
       st.error("dummyCSV.csv not found. Please ensure it's in the same directory.")
       df = None

@@ -136,6 +136,10 @@ container1.write(data_assessment)
 container2.write(data_citation)
 container3.write(data_reasoning)
 
+
+# Section for choosing data source
+st.subheader("Find out more about the platform")
+
 st.markdown("""
 This is a proof of concept platform built using Google tools in the NHS AI Google Hackathon, May 2024. 
 

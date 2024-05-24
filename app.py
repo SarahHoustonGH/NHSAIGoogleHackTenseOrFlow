@@ -20,7 +20,7 @@ We're here to help you discover insights from your data. Feel free to ask questi
 """)
 
 st.markdown("Describe your role in a sentence:")
-context = st.text_input()
+context = st.text_input("")
 
 # Section for choosing data source
 st.markdown("Choose Data Source:")

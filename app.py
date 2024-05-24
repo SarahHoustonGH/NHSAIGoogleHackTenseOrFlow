@@ -133,7 +133,7 @@ container1, container2, container3 = st.columns(3)
 
 # Write text to each container
 container1.write(data_assessment)
-container2.write(citation)
+container2.write(data_citation)
 container3.write(data_reasoning)
 
 st.markdown("""

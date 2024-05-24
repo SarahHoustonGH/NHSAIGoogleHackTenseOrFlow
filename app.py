@@ -92,15 +92,18 @@ def get_better_prompt(original_prompt):
     return better_prompt
 
 # Generate prompt feedback based on user input (assuming API call)
-if problem:
-    better_prompt = get_better_prompt(problem)
-    prompt_assessment = f"Your prompt could be improved. How about {better_prompt}?"
-    link_text = "learn more [here](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/introduction-prompt-design)"
-    
-    st.markdown(prompt_assessment)
-    st.markdown(link_text)
-                
-                problem = st.text_input("Would you like to refine your prompt?")
+if problem:  # Assuming 'problem' is a boolean variable
+  better_prompt = get_better_prompt(problem)
+  prompt_assessment = f"Your prompt could be improved. How about {better_prompt}?"
+  link_text = "learn more [here](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/introduction-prompt-design)"
+
+  st.markdown(prompt_assessment)
+  st.markdown(link_text)
+
+  # Improved readability with better indentation and variable name
+  new_prompt = st.text_input("Would you like to refine your prompt further?")
+  if new_prompt:
+      problem = new_prompt  # Update 'problem' with the user's new prompt (if provided)
 
 # Submit button with conditional enabling
 submit = st.button('Generate data analysis', disabled=not (uploaded_file and problem))

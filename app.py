@@ -94,9 +94,11 @@ def get_better_prompt(original_prompt):
 # Generate prompt feedback based on user input (assuming API call)
 if problem:
     better_prompt = get_better_prompt(problem)
-    prompt_assessment = f"Your prompt could be improved. How about {better_prompt}?."
-    st.markdown("To learn more about designing better prompts, learn more [here](%s)" % "https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/introduction-prompt-design")
-    st.markdown(f"{prompt_assessment}", unsafe_allow_html=True)
+    prompt_assessment = f"Your prompt could be improved. How about {better_prompt}?"
+    link_text = "learn more [here](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/introduction-prompt-design)"
+    
+    st.markdown(prompt_assessment)
+    st.markdown(link_text)
                 
                 problem = st.text_input("Would you like to refine your prompt?")
 

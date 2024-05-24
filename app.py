@@ -29,7 +29,20 @@ if uploaded_file is not None:
     # Placeholder message for uploaded file
     st.write("File uploaded! Analyzing data...")
 
-    # (Your data analysis code using the uploaded file content)
+    # Read the file into a DataFrame
+    if uploaded_file.name.endswith('.csv'):
+        df = pd.read_csv(uploaded_file)
+    elif uploaded_file.name.endswith('.xlsx'):
+        df = pd.read_excel(uploaded_file)
+
+    # Extract column names
+    column_name_list = df.columns.tolist()
+
+    selected_options = st.multiselect(
+    "What data would you like to explore?",
+    column_name_list)
+
+    # (Your data analysis code using the uploaded file content, prompt and column name list)
 
     # Success message after analysis (replace with specific results)
     st.success("Data analysis complete! See summary below.")
@@ -62,5 +75,11 @@ if submit:
     st.write(text2)
 
 # API response on data assessment
+data_assessment = "Your data is terrible, it is not reliable"
+st.markdown(f"<p style='color:orange'>Data assessment: {data_assessment}</p>", unsafe_allow_html=True)
+
+# API response on data assessment
+data_score = "xx%"
+
 data_assessment = "Your data is terrible, it is not reliable"
 st.markdown(f"<p style='color:orange'>Data assessment: {data_assessment}</p>", unsafe_allow_html=True)

@@ -115,6 +115,14 @@ if submit:
         text2 = "API output (replace with analysis results)"
     st.write(text2)
 
+# Create two empty containers for analysis
+data1, data2 = st.columns(2)
+
+# Write text to each container
+data1.write(data_assessment)
+data2.write(data_citation)
+
+
 st.subheader("We've checked the data and result for you. This is what we found")
 
 # API response on data assessment

@@ -22,9 +22,6 @@ We're here to help you discover insights from your data. Feel free to ask questi
 st.subheader("Tell us about yourself")
 context = st.text_input("Describe your role in a sentence. This will help the model choose the best way to respond to your query.")
 
-# Create four empty containers
-example_container1, example_container2, example_container3 = st.columns(3)
-
 st.markdown("Find some useful examples below")
 
 # Define text outputs
@@ -36,6 +33,9 @@ example_3 = "I am an NHS director, looking to understand performance in my regio
 example_container1.write(example_1)
 example_container2.write(example_2)
 example_container3.write(example_3)
+
+# Create four empty containers
+example_container1, example_container2, example_container3 = st.columns(3)
 
 # Section for choosing data source
 st.subheader("Choose a Data Source")

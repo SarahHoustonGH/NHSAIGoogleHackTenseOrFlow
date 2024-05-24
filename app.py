@@ -22,7 +22,7 @@ We're here to help you discover insights from your data. Feel free to ask questi
 context = st.text_input("Can you please describe your role in a sentence")
 
 # Section for choosing data source
-st.subheader("Choose Data Source:")
+st.markdown("Choose Data Source:")
 
 # Option 1: Local File Upload
 col1, col2 = st.columns(2)

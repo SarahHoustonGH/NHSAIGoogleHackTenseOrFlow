@@ -108,38 +108,33 @@ if problem:  # Assuming 'problem' is a boolean variable
 # Submit button with conditional enabling
 submit = st.button('Generate data analysis', disabled=not (uploaded_file and problem))
 
+st.subheader("Here's a summary of the analysis")
 if submit:
-    st.subheader("Summary:")
     with st.spinner(text="This may take a moment..."):
         # Placeholder for API analysis logic
         text2 = "API output (replace with analysis results)"
     st.write(text2)
 
-# API response on data assessment
-data_assessment = "Your data is terrible, it is not reliable"
-st.markdown(f"<p style='color:orange'>Data assessment: {data_assessment}</p>", unsafe_allow_html=True)
+st.subheader("We've checked the data and result for you. This is what we found")
 
 # API response on data assessment
-data_score = "xx%"
+data_assessment = "Data assessment API response"
 
-data_assessment = "Your data is terrible, it is not reliable"
-st.markdown(f"<p style='color:orange'>Data assessment: {data_assessment}</p>", unsafe_allow_html=True)
+# API response on data assessment
+data_citation = "Data citation to appear when pulling data from Google"
+
+# API response on data assessment
+data_reasoning = "Why Google chose this response"
 
 
 # Create four empty containers
-container1, container2, container3, container4 = st.columns(4)
+container1, container2, container3 = st.columns(3)
 
-# Define text outputs
-text1 = "Text 1"
-text2 = "Text 2"
-text3 = "Text 3"
-text4 = "Text 4"
 
 # Write text to each container
-container1.write(text1)
-container2.write(text2)
-container3.write(text3)
-container4.write(text4)
+container1.write({data_assessment})
+container2.write({citation})
+container3.write({data_reasoning})
 
 st.markdown("""
 This is a proof of concept platform built using Google tools in the NHS AI Google Hackathon, May 2024. 

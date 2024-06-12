@@ -128,16 +128,6 @@ if submit:
         text2 = "API output (replace with analysis results)"
     st.write(text2)
 
-# Create two empty containers for analysis
-data1, data2 = st.columns(2)
-
-text_result = "This is the text result"
-graph_result = "This is the graphical result"
-
-# Write text to each container
-data1.write(text_result)
-data2.write(graph_result)
-
 # Add a background color using CSS style
 def grey_background():
   """
@@ -157,6 +147,18 @@ def grey_background():
   )
 
 grey_background()
+
+# Create two empty containers for analysis
+data1, data2 = st.columns(2)
+
+text_result = "This is the text result"
+graph_result = "This is the graphical result"
+
+# Write text to each container
+data1.write(text_result)
+data2.write(graph_result)
+
+
 
 # Add the class to the containers
 data1.empty().className = "placeholder"

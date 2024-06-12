@@ -13,13 +13,11 @@ Welcome to WISE, your personal analytical assistant!
 
 **Please Note:**
 
-* For best results, ensure your dataset is well-structured and contains relevant health data. The model will only respond to questions about the data provided.
-* Please do not upload personal identifiable data. 
+* For best results, ensure your dataset is well-structured and contains relevant health data.
+* Please do not upload personal identifiable data.
 
 We're here to help you discover insights from your data. Feel free to ask questions or explore visualisations.
 """)
-
-st.markdown("""<hr style="border-color: #e0e0e0; height: 1px; background-image: none;">""", unsafe_allow_html=True)
 
 st.subheader("Tell us about yourself")
 context = st.text_input("Describe your role in a sentence. This will help the model choose the best way to respond to your query.")
@@ -39,7 +37,7 @@ example_container1.write(example_1)
 example_container2.write(example_2)
 example_container3.write(example_3)
 
-st.markdown("""<hr style="border-color: #e0e0e0; height: 1px; background-image: none;">""", unsafe_allow_html=True)
+
 
 # Section for choosing data source
 st.subheader("Choose a Data Source")
@@ -84,13 +82,15 @@ with col2:
   else:
     st.info("Drag and drop your dataset here to start exploring!")
 
-st.markdown("""<hr style="border-color: #e0e0e0; height: 1px; background-image: none;">""", unsafe_allow_html=True)
 
 # Text input for problem with placeholder
 st.subheader("Tell us your problem")
 st.markdown("""For example:
-“Give me mean unadjusted scores by cancer alliance”
+
+“Give me mean unadjusted scores by cancer alliance.”
+
 “Which area is most in need of performance improvement?” 
+
 """)
 
 problem = st.text_input("What question would you want to answer with this data?", key="problem")
@@ -107,7 +107,7 @@ def get_better_prompt(original_prompt):
 if problem:  # Assuming 'problem' is a boolean variable
   better_prompt = get_better_prompt(problem)
   prompt_assessment = f"Your prompt could be improved. How about {better_prompt}?"
-  link_text = "learn more [here](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/introduction-prompt-design)"
+  link_text = "Learn more abour prompt development [here](https://cloud.google.com/vertex-ai/generative-ai/docs/learn/prompts/introduction-prompt-design)."
 
   st.markdown(prompt_assessment)
   st.markdown(link_text)
@@ -117,20 +117,17 @@ if problem:  # Assuming 'problem' is a boolean variable
   if new_prompt:
       problem = new_prompt  # Update 'problem' with the user's new prompt (if provided)
 
-st.markdown("""<hr style="border-color: #e0e0e0; height: 1px; background-image: none;">""", unsafe_allow_html=True)
-
-# Define uploaded_file and problem based on your use case (see suggestions above)
-
+# Submit button with conditional enabling
 submit = st.button('Generate data analysis', disabled=not (uploaded_file and problem))
 
 st.subheader("Here's a summary of the analysis")
 if submit:
-  with st.spinner(text="This may take a moment..."):
-    # Placeholder for API analysis logic
-    text2 = "API output (replace with analysis results)"
-  st.write(text2)
+    with st.spinner(text="This may take a moment..."):
+        # Placeholder for API analysis logic
+        text2 = "API output (replace with analysis results)"
+    st.write(text2)
 
-# Create two empty containers for analysis (can be placed later)
+# Create two empty containers for analysis
 data1, data2 = st.columns(2)
 
 text_result = "This is the text result"
@@ -140,9 +137,30 @@ graph_result = "This is the graphical result"
 data1.write(text_result)
 data2.write(graph_result)
 
+# Add a background color using CSS style
+def grey_background():
+  """
+  Function to set a grey background style.
+  """
+  st.markdown(
+      """<style>
+      .placeholder {
+        background-color: #F5F5F5;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+        display: inline-block;
+      }
+      </style>""",
+      unsafe_allow_html=True,
+  )
 
+grey_background()
 
-st.markdown("""<hr style="border-color: #e0e0e0; height: 1px; background-image: none;">""", unsafe_allow_html=True)
+# Add the class to the containers
+data1.empty().className = "placeholder"
+data2.empty().className = "placeholder"
+
 
 st.subheader("We've checked the data and result for you. This is what we found")
 
@@ -165,7 +183,6 @@ container1.write(data_assessment)
 container2.write(data_citation)
 container3.write(data_reasoning)
 
-st.markdown("""<hr style="border-color: #e0e0e0; height: 1px; background-image: none;">""", unsafe_allow_html=True)
 
 # Section for choosing data source
 st.subheader("Find out more about the platform")
@@ -175,3 +192,4 @@ This is a proof of concept platform built using Google tools in the NHS AI Googl
 
 For feedback or more information, please contact us at chris.m.lewis@gmail.com
 """)
+

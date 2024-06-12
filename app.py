@@ -13,9 +13,10 @@ Welcome to WISE, your personal analytical assistant!
 
 **Please Note:**
 
-* For best results, ensure your dataset is well-structured and contains relevant health data.
+* For best results, ensure your dataset is well-structured and contains relevant health data. The model will only respond to questions about the data provided.
+* Please do not upload personal identifiable data. 
 
-We're here to help you discover insights from your data. Feel free to ask questions or explore visualizations.
+We're here to help you discover insights from your data. Feel free to ask questions or explore visualisations.
 """)
 
 st.markdown("""<hr style="border-color: #e0e0e0; height: 1px; background-image: none;">""", unsafe_allow_html=True)

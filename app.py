@@ -19,6 +19,9 @@ Welcome to WISE, your personal analytical assistant!
 We're here to help you discover insights from your data. Feel free to ask questions or explore visualisations.
 """)
 
+
+st.markdown("""<hr style="border-color: #e0e0e0; height: 1px; background-image: none;">""", unsafe_allow_html=True)
+
 st.subheader("Tell us about yourself")
 context = st.text_input("Describe your role in a sentence. This will help the model choose the best way to respond to your query.")
 
@@ -37,7 +40,7 @@ example_container1.write(example_1)
 example_container2.write(example_2)
 example_container3.write(example_3)
 
-
+st.markdown("""<hr style="border-color: #e0e0e0; height: 1px; background-image: none;">""", unsafe_allow_html=True)
 
 # Section for choosing data source
 st.subheader("Choose a Data Source")
@@ -81,7 +84,8 @@ with col2:
     st.success("Data analysis complete! See summary below.")
   else:
     st.info("Drag and drop your dataset here to start exploring!")
-
+    
+st.markdown("""<hr style="border-color: #e0e0e0; height: 1px; background-image: none;">""", unsafe_allow_html=True)
 
 # Text input for problem with placeholder
 st.subheader("Tell us your problem")
@@ -119,6 +123,8 @@ if problem:  # Assuming 'problem' is a boolean variable
 
 # Submit button with conditional enabling
 submit = st.button('Generate data analysis', disabled=not (uploaded_file and problem))
+
+st.markdown("""<hr style="border-color: #e0e0e0; height: 1px; background-image: none;">""", unsafe_allow_html=True)
 
 st.subheader("Here's a summary of the analysis")
 if submit:
@@ -161,6 +167,7 @@ grey_background()
 data1.empty().className = "placeholder"
 data2.empty().className = "placeholder"
 
+st.markdown("""<hr style="border-color: #e0e0e0; height: 1px; background-image: none;">""", unsafe_allow_html=True)
 
 st.subheader("We've checked the data and result for you. This is what we found")
 
@@ -183,6 +190,7 @@ container1.write(data_assessment)
 container2.write(data_citation)
 container3.write(data_reasoning)
 
+st.markdown("""<hr style="border-color: #e0e0e0; height: 1px; background-image: none;">""", unsafe_allow_html=True)
 
 # Section for choosing data source
 st.subheader("Find out more about the platform")

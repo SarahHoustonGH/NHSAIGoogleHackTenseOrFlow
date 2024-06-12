@@ -119,18 +119,18 @@ if problem:  # Assuming 'problem' is a boolean variable
 
 st.markdown("""<hr style="border-color: #e0e0e0; height: 1px; background-image: none;">""", unsafe_allow_html=True)
 
-# Submit button with conditional enabling
+# Define uploaded_file and problem based on your use case (see suggestions above)
+
 submit = st.button('Generate data analysis', disabled=not (uploaded_file and problem))
 
 st.subheader("Here's a summary of the analysis")
 if submit:
-    with st.spinner(text="This may take a moment..."):
-        # Placeholder for API analysis logic
-        text2 = "API output (replace with analysis results)"
-    st.write(text2)
+  with st.spinner(text="This may take a moment..."):
+    # Placeholder for API analysis logic
+    text2 = "API output (replace with analysis results)"
+  st.write(text2)
 
-
-# Create two empty containers for analysis
+# Create two empty containers for analysis (can be placed later)
 data1, data2 = st.columns(2)
 
 text_result = "This is the text result"

@@ -129,25 +129,6 @@ if submit:
         text2 = "API output (replace with analysis results)"
     st.write(text2)
 
-def grey_background():
-  """
-  Function to set a grey background style.
-  """
-  st.markdown(
-      """<style>
-      .st-element {  # Target all Streamlit elements
-        background-color: #F5F5F5 !important;
-        padding: 10px 20px;
-        border-radius: 5px;
-        margin-top: 10px;
-        display: inline-block;
-      }
-      </style>""",
-      unsafe_allow_html=True,
-  )
-
-
-grey_background()
 
 # Create two empty containers for analysis
 data1, data2 = st.columns(2)

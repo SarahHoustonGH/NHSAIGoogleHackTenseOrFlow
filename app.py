@@ -133,6 +133,29 @@ graph_result = "This is the graphical result"
 data1.write(text_result)
 data2.write(graph_result)
 
+# Add a background color using CSS style
+def grey_background():
+  """
+  Function to set a grey background style.
+  """
+  st.markdown(
+      """<style>
+      .placeholder {
+        background-color: #F5F5F5;
+        padding: 10px 20px;
+        border-radius: 5px;
+        margin-top: 10px;
+        display: inline-block;
+      }
+      </style>""",
+      unsafe_allow_html=True,
+  )
+
+grey_background()
+
+# Add the class to the containers
+data1.empty().className = "placeholder"
+data2.empty().className = "placeholder"
 
 
 st.subheader("We've checked the data and result for you. This is what we found")

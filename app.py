@@ -129,15 +129,14 @@ if submit:
         text2 = "API output (replace with analysis results)"
     st.write(text2)
 
-# Add a background color using CSS style
 def grey_background():
   """
   Function to set a grey background style.
   """
   st.markdown(
       """<style>
-      .placeholder {
-        background-color: #F5F5F5;
+      .st-element {  # Target all Streamlit elements
+        background-color: #F5F5F5 !important;
         padding: 10px 20px;
         border-radius: 5px;
         margin-top: 10px;
@@ -147,12 +146,8 @@ def grey_background():
       unsafe_allow_html=True,
   )
 
-grey_background()
 
-data1.write(" ")  # Add a space to ensure the container isn't completely empty
-data2.write(" ")
-data1.empty().className = "placeholder"
-data2.empty().className = "placeholder"
+grey_background()
 
 # Create two empty containers for analysis
 data1, data2 = st.columns(2)
@@ -165,10 +160,6 @@ data1.write(text_result)
 data2.write(graph_result)
 
 
-
-# Add the class to the containers
-data1.empty().className = "placeholder"
-data2.empty().className = "placeholder"
 
 st.markdown("""<hr style="border-color: #e0e0e0; height: 1px; background-image: none;">""", unsafe_allow_html=True)
 

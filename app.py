@@ -149,6 +149,11 @@ def grey_background():
 
 grey_background()
 
+data1.write(" ")  # Add a space to ensure the container isn't completely empty
+data2.write(" ")
+data1.empty().className = "placeholder"
+data2.empty().className = "placeholder"
+
 # Create two empty containers for analysis
 data1, data2 = st.columns(2)
 
